@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Opponents:</strong>
+  <% @user.games.each do |x| %>
+  <%=x.opponent.name %>
+    <% end %>
+</p>
+
+<p>
+  <strong>other:</strong>
+  <%= @user.others.each do |x| %>
+  <%=x.opponent.name %>
+    <% end %>
+</p>
+
+<p>
+  <strong>friends:</strong>
+  <%= @user.friends.each do |x| %>
+  <%=x.name %>
+    <% end %>
+</p>
+
+
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
